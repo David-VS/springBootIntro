@@ -17,4 +17,13 @@ public class EvenementDAO {
     public HashSet<Evenement> getEvents() {
         return events;
     }
+
+    public Evenement getEventById(int id){
+        for (Evenement currentElement : this.events) {
+            if(currentElement.getId() == id){
+                return currentElement;
+            }
+        }
+        return new Evenement();
+    }
 }

@@ -10,7 +10,7 @@ import java.util.Random;
 @Controller
 public class LuckyController {
 
-    @RequestMapping(value="/lucky", method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.GET, value="/lucky")
     @ResponseBody
     public int getLucky(){
         Random randomGenerator = new Random();

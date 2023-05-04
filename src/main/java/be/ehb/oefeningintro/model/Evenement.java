@@ -1,8 +1,14 @@
 package be.ehb.oefeningintro.model;
 
+import org.springframework.stereotype.Component;
+
+
 public class Evenement {
     private int id;
     private String naam, soort;
+
+    public Evenement() {
+    }
 
     public Evenement(int id, String naam, String soort) {
         this.id = id;

@@ -7,27 +7,27 @@ import java.util.HashSet;
 @Component
 public class EvenementDAO {
 
-    private HashSet<Evenement> events = new HashSet<>();
+    private HashSet<Event> events = new HashSet<>();
 
     public EvenementDAO() {
-        events.add(new Evenement(1, "Bal national", "TD"));
-        events.add(new Evenement(2, "de foot bal", "TD"));
+        events.add(new Event(1, "Bal national", "TD"));
+        events.add(new Event(2, "de foot bal", "TD"));
     }
 
-    public HashSet<Evenement> getEvents() {
+    public HashSet<Event> getEvents() {
         return events;
     }
 
-    public Evenement getEventById(int id){
-        for (Evenement currentElement : this.events) {
+    public Event getEventById(int id){
+        for (Event currentElement : this.events) {
             if(currentElement.getId() == id){
                 return currentElement;
             }
         }
-        return new Evenement();
+        return new Event();
     }
 
-    public void saveEvent(Evenement ev) {
+    public void saveEvent(Event ev) {
         events.add(ev);
     }
 }

@@ -1,6 +1,6 @@
 package be.ehb.oefeningintro.controller;
 
-import be.ehb.oefeningintro.data.Evenement;
+import be.ehb.oefeningintro.data.Event;
 import be.ehb.oefeningintro.data.EvenementDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,23 +19,23 @@ public class EventController {
     }
 
     @GetMapping
-    public HashSet<Evenement> getAllEvents(){
+    public HashSet<Event> getAllEvents(){
         return mEvenementDAO.getEvents();
     }
 
     @GetMapping("/{id}")
-    public Evenement findByID(@PathVariable("id")int id){
+    public Event findByID(@PathVariable("id")int id){
         return mEvenementDAO.getEventById(id);
     }
 
     @PostMapping
     public void newEvent(@RequestParam("id")int id,
-                         @RequestParam("naam")String naam,
-                         @RequestParam("soort")String soort){
-        Evenement ev = new Evenement();
+                         @RequestParam("name")String name,
+                         @RequestParam("type")String sort){
+        Event ev = new Event();
         ev.setId(id);
-        ev.setNaam(naam);
-        ev.setSoort(soort);
+        ev.setName(name);
+        ev.setSort(sort);
         mEvenementDAO.saveEvent(ev);
     }
 }

@@ -1,4 +1,4 @@
-package be.ehb.oefeningintro.model;
+package be.ehb.oefeningintro.data;
 
 import org.springframework.stereotype.Component;
 
@@ -25,5 +25,9 @@ public class EvenementDAO {
             }
         }
         return new Evenement();
+    }
+
+    public void saveEvent(Evenement ev) {
+        events.add(ev);
     }
 }

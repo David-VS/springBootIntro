@@ -1,6 +1,4 @@
-package be.ehb.oefeningintro.model;
-
-import org.springframework.stereotype.Component;
+package be.ehb.oefeningintro.data;
 
 
 public class Evenement {

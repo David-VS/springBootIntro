@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component;
 import java.util.HashSet;
 
 @Component
-public class EvenementDAO {
+public class EventDAO {
 
     private HashSet<Event> events = new HashSet<>();
 
-    public EvenementDAO() {
+    public EventDAO() {
         events.add(new Event(1, "Bal national", "TD"));
         events.add(new Event(2, "de foot bal", "TD"));
     }

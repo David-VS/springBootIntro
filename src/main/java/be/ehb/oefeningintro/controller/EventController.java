@@ -1,7 +1,7 @@
 package be.ehb.oefeningintro.controller;
 
 import be.ehb.oefeningintro.data.Event;
-import be.ehb.oefeningintro.data.EvenementDAO;
+import be.ehb.oefeningintro.data.EventDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,21 +11,21 @@ import java.util.HashSet;
 @RequestMapping("/events")
 public class EventController {
 
-    private final EvenementDAO mEvenementDAO;
+    private final EventDAO mEventDAO;
 
     @Autowired
-    public EventController(EvenementDAO mEvenementDAO) {
-        this.mEvenementDAO = mEvenementDAO;
+    public EventController(EventDAO mEventDAO) {
+        this.mEventDAO = mEventDAO;
     }
 
     @GetMapping
     public HashSet<Event> getAllEvents(){
-        return mEvenementDAO.getEvents();
+        return mEventDAO.getEvents();
     }
 
     @GetMapping("/{id}")
     public Event findByID(@PathVariable("id")int id){
-        return mEvenementDAO.getEventById(id);
+        return mEventDAO.getEventById(id);
     }
 
     @PostMapping
@@ -36,6 +36,6 @@ public class EventController {
         ev.setId(id);
         ev.setName(name);
         ev.setSort(sort);
-        mEvenementDAO.saveEvent(ev);
+        mEventDAO.saveEvent(ev);
     }
 }
